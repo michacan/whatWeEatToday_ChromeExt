@@ -1,0 +1,47 @@
+{
+    "name": "Where We Eat Today",
+    "description": "Helps you decide what to eat",
+    "version": "1.0.1",
+    "manifest_version": 3,
+    "icons": {
+      "16": "./images/10bis.16.orange.png",
+      "32": "./images/10bis.32.orange.png",
+      "48": "./images/10bis.48.orange.png",
+      "128": "./images/10bis.128.orange.png"
+    },
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "action": {
+      "default_popup": "./popup.html",
+      "default_icon": {
+        "16": "./images/10bis.16.orange.png",
+        "32": "./images/10bis.32.orange.png",
+        "48": "./images/10bis.48.orange.png",
+        "128": "./images/10bis.128.orange.png"
+      }
+    },
+    "options_page": "./options.html",
+    "permissions": [
+      "activeTab",
+      "tabs",
+      "storage",
+      "scripting",
+      "webRequest"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "content_scripts": [
+    {
+        "matches": [
+            "*://*.10bis.co.il/*"
+        ],
+        "css": [],
+        "js": [
+            "js/jquery.min.js",
+            "content-script.js"
+        ]
+    }]
+  }
+  

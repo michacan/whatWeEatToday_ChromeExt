@@ -1,0 +1,116 @@
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+}
+div{
+    font-size: 15px;
+}
+.small{
+    font-size: 12px;
+}
+tr {
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+td {
+    padding: 12px 15px;
+}
+
+.thick {
+  font-weight: bold;
+}
+
+.wrong_date{
+    color: red;
+}
+h1, h2, h3 { text-align: center }
+.ordersNotToday { display: none; }
+
+img{
+    float:left;
+    height: 100px;
+    margin:0px;
+    padding:0px;
+}
+
+#ibox{
+    position:absolute;
+    overflow-y:none;
+    background:#fff;
+    border:1px solid #ccc;
+    z-index:1001;
+    display:none;
+    padding:4px;
+    -webkit-box-shadow: 0px 0px 6px 0px #bbb;
+    -moz-box-shadow: 0px 0px 6px 0px #bbb;
+    box-shadow: 0px 0px 6px 0px #bbb; 
+}
+#ibox img{
+    border:1px solid #444;
+}
+#ibox br{
+    clear:both;
+}
+#version{
+    left: 0px;
+    top: 0px;
+    width: 170px;
+    z-index: 2;
+    position:absolute;
+    display:block;
+    text-align: left;
+}
+.left {
+    cursor: pointer;
+    text-align: left;
+    float: left;
+}
+.right {
+    text-align: right;
+    float: right;
+}
+
+.google_icon{
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+}
+/*h3 {
+    white-space: nowrap;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+label {
+    min-width: 80px;
+    display: inline-block;
+}
+
+.orders-table {
+    margin: 10px;
+    white-space: nowrap;
+    border: 1px solid black;
+}
+
+.bon-appetit {
+    margin-top: 10px;
+}
+
+html{
+    width: 500px;
+    height: 500px;
+}
+
+tr{
+    cursor: pointer;
+}
+*/

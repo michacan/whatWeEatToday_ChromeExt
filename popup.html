@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Where we eat today?</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./popup.js"></script>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <h3>מה הוזמן היום</h3>
+    <h3 id='version'></h3>
+    <div>
+        <table id="ordersToday">
+        </table>
+    </div>
+    <!-- <button id='refresh'>Refresh Page</button> -->
+    <div class="right"><a href >לטעון מחדש</a></div>
+    <div id="suggestImprovement" class="suggestImprovement left">הצעת יעול</div>
+    <h3 class='ordersNotToday'>מה הוזמן לפני היום</h3>
+    <div>
+        <table id="ordersNotToday" class='ordersNotToday'>
+        </table>
+    </div>
+</body>
+
+</html>
