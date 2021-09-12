@@ -1,6 +1,8 @@
 // console.log('content-script.js start');
 var pay_btn_selector_10bis = "[class*='PaymentActionButton']";
 var bill_selector_10bis = "div.ShoppingCartDishesstyled__BillingLine-sc-1ifkpzb-15.fTJPPx > div > div > div > div";
+var dish_cost_min = 20;
+var NIS = "₪";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     //console.log('onMessage request=',request);
@@ -38,6 +40,22 @@ function findMealPicUrl(dish_name) {
     return "";
 }
 
+function isOrderPriceOK(dish_cost_str) {
+    console.log('isOrderPriceOK()');
+    if (typeof dish_cost_str != 'string') {
+        return false;
+    }
+    let dish_cost = dish_cost_str.replace(NIS, '');
+    const parsed = parseInt(dish_cost);
+    if (!isNaN(parsed) && parsed > dish_cost_min) {
+        console.log(`isOrderPriceOK() TRUE, dish_cost_str=${dish_cost_str}`);
+        return true;
+    }
+
+    console.log(`isOrderPriceOK() FALSE, dish_cost_str=${dish_cost_str}`);
+    return false;
+}
+
 function createOrder() {
 
     // console.log('createOrder()');
@@ -53,6 +71,10 @@ function createOrder() {
     dishes.each(function () {
         let dish_name = $(this).find("div:nth-child(1) > button").text().trim();
         let dish_cost = $(this).find("div:nth-child(1) > div > div ").text().trim();
+        if(!isOrderPriceOK(dish_cost)){
+            console.log(`isOrderPriceOK() returned FALSE, dish_name=${dish_name}, dish_cost=${dish_cost}`);
+            return;
+        }
         let dish_desc = "";
         let dish_user = "";
         if ($(this).children().length === 2) {
