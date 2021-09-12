@@ -41,18 +41,18 @@ function findMealPicUrl(dish_name) {
 }
 
 function isOrderPriceOK(dish_cost_str) {
-    console.log('isOrderPriceOK()');
+    //console.log('isOrderPriceOK()');
     if (typeof dish_cost_str != 'string') {
         return false;
     }
     let dish_cost = dish_cost_str.replace(NIS, '');
     const parsed = parseInt(dish_cost);
     if (!isNaN(parsed) && parsed > dish_cost_min) {
-        console.log(`isOrderPriceOK() TRUE, dish_cost_str=${dish_cost_str}`);
+        //console.log(`isOrderPriceOK() TRUE, dish_cost_str=${dish_cost_str}`);
         return true;
     }
 
-    console.log(`isOrderPriceOK() FALSE, dish_cost_str=${dish_cost_str}`);
+    //console.log(`isOrderPriceOK() FALSE, dish_cost_str=${dish_cost_str}`);
     return false;
 }
 
